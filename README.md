@@ -28,7 +28,7 @@ This application demonstrate building backend RESTful APIs with the newest React
 Clone the source codes into your local system.
 
 ```
-git clone https://github.com/sandip1805/angular-spring-reactive-sample
+git clone https://github.com/sandip1805/angular-spring-reactive-post-sample
 ```
 
 ### Server 
@@ -41,7 +41,7 @@ The backend is a Spring Boot based application, make sure you have installed the
 
 There is a *docker-compose.yml* file in the project root folder. 
 
-Starts up required MongoDb and Reids service in the background by executing the following command.
+This file will make up and running application frontend and backend with mongo and redis dependencies.
 
 ```
 docker-compose up
