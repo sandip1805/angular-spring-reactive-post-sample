@@ -3,10 +3,7 @@ server:
 spring:
   data:
     mongodb:
-#      host: localhost
-#      port: 27017
-#      uri: mongodb://user:secret@mongo1.example.com:12345,mongo2.example.com:23456/test
-      uri: mongodb://127.0.0.0:27017/blog
+      uri: mongodb://localhost:27017/blog
       grid-fs-database: images
 logging:
   level:

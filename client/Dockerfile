@@ -11,6 +11,8 @@ RUN rm /etc/nginx/conf.d/default.conf
 
 ADD ./nginx/nginx.conf /etc/nginx/nginx.conf
 
-ADD ./dist /usr/share/nginx/html 
+ADD ./dist /usr/share/nginx/html
+
+RUN chown nginx:nginx /usr/share/nginx/html/*
 
 

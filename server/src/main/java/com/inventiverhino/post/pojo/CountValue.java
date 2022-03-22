@@ -9,6 +9,5 @@ import java.io.Serializable;
 @ToString
 @AllArgsConstructor(onConstructor = @__({@JsonCreator}))
 public class CountValue implements Serializable {
-
     private long count;
 }

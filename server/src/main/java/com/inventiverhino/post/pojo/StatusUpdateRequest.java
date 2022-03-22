@@ -11,7 +11,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StatusUpdateRequest implements Serializable {
-
     @NotBlank
     private String status;
 }

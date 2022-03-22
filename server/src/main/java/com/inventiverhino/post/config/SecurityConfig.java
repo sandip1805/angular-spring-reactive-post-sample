@@ -18,8 +18,7 @@ import reactor.core.publisher.Mono;
 public class SecurityConfig {
 
     @Bean
-    SecurityWebFilterChain springWebFilterChain(ServerHttpSecurity http) throws Exception {
-
+    SecurityWebFilterChain springWebFilterChain(ServerHttpSecurity http) {
         return http
                 .csrf(it ->
                         it.disable()

@@ -11,6 +11,9 @@ import reactor.core.publisher.Mono;
 
 import java.time.LocalDateTime;
 
+/**
+ * This class is mainly used for auditing purpose, and will add username, createdDate and updateDate on each mongo operation before storing it.
+ */
 public class PersistentEntityCallback implements ReactiveBeforeConvertCallback<PersistentEntity> {
 
     @Override

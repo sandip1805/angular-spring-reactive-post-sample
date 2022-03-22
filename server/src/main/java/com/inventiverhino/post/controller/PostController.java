@@ -18,17 +18,15 @@ import static java.util.Comparator.comparing;
 import static org.springframework.http.HttpStatus.NO_CONTENT;
 import static org.springframework.http.ResponseEntity.*;
 
-@RestController()
+@RestController
 @RequestMapping(value = "/posts")
 @RequiredArgsConstructor
 public class PostController {
 
     private final PostRepository posts;
-
     private final CommentRepository comments;
 
-
-    @GetMapping("")
+    @GetMapping
     public Flux<Post> all(@RequestParam(value = "q", required = false) String q,
                           @RequestParam(value = "page", defaultValue = "0") long page,
                           @RequestParam(value = "size", defaultValue = "10") long size) {
@@ -52,7 +50,7 @@ public class PostController {
                 );
     }
 
-    @PostMapping("")
+    @PostMapping
     public Mono<ResponseEntity> create(@RequestBody @Valid Post post) {
         return this.posts.save(post)
                 .map(saved -> created(URI.create("/posts/" + saved.getId())).build());
@@ -71,7 +69,6 @@ public class PostController {
                 .map(p -> {
                     p.setTitle(post.getTitle());
                     p.setContent(post.getContent());
-
                     return p;
                 })
                 .flatMap(this.posts::save)
@@ -86,7 +83,6 @@ public class PostController {
                 .map(p -> {
                     // TODO: check if the current user is author it has ADMIN role.
                     p.setStatus(Post.Status.valueOf(status.getStatus()));
-
                     return p;
                 })
                 .flatMap(this.posts::save)
